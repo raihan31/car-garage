@@ -1,0 +1,7 @@
+<div>
+    <div *ngFor="let car of Cars" style="width: 200px">
+        <img [src]="car.image">
+        <h3>{{car.brand}} {{car.model}}</h3>
+        <h4>{{car.mileage}} {{car.fuelType}}</h4>
+    </div>
+</div>
