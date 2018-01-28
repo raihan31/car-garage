@@ -6,7 +6,7 @@ export class Car {
     engine: string;
     mileage: string;
     image: string;
-    constructor(data: any){
+    constructor(data: any) {
         this.id = data.id;
         this.brand = data.brand;
         this.model = data.model;

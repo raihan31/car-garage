@@ -9,17 +9,13 @@ import { Car } from '../../car/models/car';
   styleUrls: ['./root-garage.component.css']
 })
 export class RootGarageComponent implements OnInit {
-
-  
   garage: Garage;
-
   constructor(private garageService: GarageService) {
-    
+    this.garage = this.garageService.newGarage();
+    this.garage.cars = this.garageService.getCars();
   }
 
   ngOnInit() {
-    this.garage.cars = <Car[]>this.garageService.getCars();
-    console.log(this.garage);
   }
 
 }

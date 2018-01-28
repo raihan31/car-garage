@@ -1,7 +1,17 @@
-<div>
-    <div *ngFor="let car of Cars" style="width: 200px">
-        <img [src]="car.image">
-        <h3>{{car.brand}} {{car.model}}</h3>
-        <h4>{{car.mileage}} {{car.fuelType}}</h4>
-    </div>
+<div class="row m-md-3">
+  <app-car-form [car]="newCar"></app-car-form>
 </div>
+<div class="row">
+  <div class="card m-3" *ngFor="let car of cars" style="width: 18rem;">
+
+    <img class="card-img-top" [src]="car.image"  alt="Car image">
+    <div class="card-body">
+      <h5 class="card-title">{{car.brand}} {{car.model}}</h5>
+      <p class="card-text">{{car.mileage}} {{car.fuelType}}</p>
+      <app-car-details [car]="car" ></app-car-details>
+      <button class="btn btn-lg btn-outline-danger" (click)="deleteCar(car)">Delete</button>
+    </div>
+  </div>
+</div>
+
+

@@ -1,3 +1,52 @@
-<p>
-  car-form works!
-</p>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">New Car</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default1">Brand</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="car.brand" aria-label="Brand" aria-describedby="inputGroup-sizing-default1">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default2">Model</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="car.model" aria-label="model" aria-describedby="inputGroup-sizing-default2">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default3">Fuel Type</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Fuel Type" [(ngModel)]="car.fuelType" aria-describedby="inputGroup-sizing-default3">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default4">Engine</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Engine" [(ngModel)]="car.engine"  aria-describedby="inputGroup-sizing-default4">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default5">Mileage</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" [(ngModel)]="car.mileage" aria-describedby="inputGroup-sizing-default5">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default6">Image Url</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" [(ngModel)]="car.image" aria-describedby="inputGroup-sizing-default5">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-lg btn-outline-primary" (click)="saveCar()">Submit</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add New Car</button>
